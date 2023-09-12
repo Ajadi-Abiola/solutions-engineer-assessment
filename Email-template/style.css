@@ -1,0 +1,59 @@
+body{
+    display: flex;
+    justify-content: center;
+}
+
+.container{
+    padding: 4rem;
+}
+
+.paybtn{
+    background-color: #352E4B; 
+    color: #fff;
+    border-radius: 20px;
+    padding: 10px 60px; 
+    font-size: 16px;
+    transition: background-color 0.3s ease; 
+    text-align: center; 
+    margin: 40px auto;
+    display: block;
+}
+
+    .paybtn:hover {
+        background-color: hsl(248, 27%, 30%);
+    }
+
+    .tcontainer{
+        padding: 2rem;
+    }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        th, td {
+            border:none;
+            text-align: left;
+            padding: 8px;
+            border-top: 1px solid #dddddd;
+            border-bottom: 1px solid #dddddd; 
+        }
+
+        th {
+            background-color:#352E4B ;
+            color: #fff;
+            text-align: center;
+        }
+
+        tr {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;}
+            tr:first-child,
+            tr:nth-last-child(2) {
+                background-color: #fff;
+            }

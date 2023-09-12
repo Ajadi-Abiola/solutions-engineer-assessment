@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Petson</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+<body  id="email-template" >
+    <div class="container">
+    <img src="src/emailHeader.png" alt="Image header" width="100%">
+    <div>
+    <p > Dear {{lastName}} {{firstName}} {{#if middleName}}{{middleName}}{{/if}},</p>
+    <p>We are contacting you because there is an amount due on your purchase {{purchaseId}}</p>
+    <div class = 'tcontainer'>
+    <table  id= 'table-template' class="tabledata">
+        <thead>
+            <th  colspan="3">purchase summary</th>
+            </thead>
+            <tbody>
+            <tr>
+            <td >Date</td>
+            <td  colspan="2">{{date}}</td>
+            </tr>
+            <!-- {{#each products}} -->
+                <tr>
+            <td >{{this.quantity}}</td>
+            <td>{{this.product}}</td>
+            <td>{{this.price}}</td>
+          </tr>
+          <!-- {{/each}} -->
+        </tr>
+        <tr>
+          <td></td>
+          <td>total amount</td>
+          <td>{{amount}}</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td> amount paid</td>       
+          <td>{{amountPaid}}</td>
+          </tr>
+    </tbody>
+  </table>
+ </div>
+  <p>According to our records, the amount due is {{amountDue}} Kn
+    click on the next button to pay this difference </p>
+    <button class="paybtn" onclick="window.location.href='https://pet-shop.buckhill.com.hr/checkout'"> Pay now
+    </button>
+    <!-- onclick of this button will get a userId from the array -->
+    <!-- <button  onclick="getRandomUserId()">generate random useremail</button>  -->
+    <p>If you have any other concerns, please contact our technical support team.</p>
+    <p> Kind regards,</p>
+    <p>Petson Team</p>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+<script src="api.js"></script>
+<!-- <script src="jsonLogic.js"></script>  -->
+</div>
+  </body>
+  </html>

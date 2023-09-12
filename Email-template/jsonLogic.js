@@ -1,16 +1,54 @@
 // const rules = {
-//   and: [
-//     { ">": [{ var: "amountDue" }, 0] }, // Check if dueAmount is greater than 0
-//     { ">=": [{ var: "orderDate" }, "2021-01-01T00:00:00Z"] }, // Check if purchaseDate is on or after January 1st, 2021
-//     {
-//       in: [
-//         { var: "address.shippingCountry" },
-//         ["Croatia", "Italy"], // Check if shippingCountry is either Croatia or Italy
-//       ],
-//     },
-//   ],
+//   rule1: {
+//     and: [
+//       { ">": [{ var: "amount" }, 0] },
+//       {
+//         ">=": [
+//           { date: [{ var: "created_at" }, "YYYY-MM-DDTHH:mm:ss.SSSSSSZ"] },
+//           "2021-01-01T00:00:00.000000Z",
+//         ],
+//       },
+//       {
+//         in: [{ var: "address.shippingCountry" }, ["Croatia", "Italy"]],
+//       },
+//     ],
+//   },
+//   rule2: {
+//     and: [
+//       { "!=": [{ var: "payment" }, null] },
+//       {
+//         ">=": [
+//           { date: [{ var: "created_at" }, "YYYY-MM-DDTHH:mm:ss.SSSSSSZ"] },
+//           "2021-01-01T00:00:00.000000Z",
+//         ],
+//       },
+//       {
+//         in: [{ var: "address.shippingCountry" }, ["Croatia", "Italy"]],
+//       },
+//     ],
+//   },
+
+//   rule3: {
+//     or: [
+//       {
+//         and: [
+//           { ">": [{ var: "amount" }, 1000] },
+//           {
+//             ">=": [
+//               { date: [{ var: "created_at" }, "YYYY-MM-DDTHH:mm:ss.SSSSSSZ"] },
+//               "2022-01-01T00:00:00.000000Z",
+//             ],
+//           },
+//           {
+//             in: [{ var: "address.shippingCountry" }, ["Spain", "Germany"]],
+//           },
+//           {
+//             "==": [{ var: "order_status.title" }, "Shipped"],
+//           },
+//         ],
+//       },
+//     ],
+//   },
 // };
 
-// const orderData = orderData;
-
-// const result = jsonLogic.apply(rules, orderData);
+// export default rules;
